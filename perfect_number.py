@@ -51,3 +51,9 @@ if p.is_perfect(num):
     print(f"{num} is a perfect number.")
 else:
     print(f"{num} is not a perfect number.")
+
+import timeit
+import pandas as pd
+perf = timeit.repeat(lambda: p.is_perfect(8), repeat=5)
+series=pd.Series(perf)
+print(series.describe())
